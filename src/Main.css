@@ -14,7 +14,7 @@
     --main-padding-lf: 20px;
     --img-size: 120px;
     --select-height: 34px;
-    --select-padding: 10px;
+    --select-margin: 10px;
 }
 
 * {
@@ -35,8 +35,11 @@ body {
 
 .title{
     min-width: var(--title-minWidth);
-    /* min-height: calc(var(--screen-height)); */
-    height: calc(var(--screen-height));
+    min-height: calc(var(--screen-height));
+    height: calc( var(--main-padding-ud) * 2
+                + var(--select-height)
+                + var(--select-margin)
+                + 400px);
     padding: var(--title-padding-ud) var(--title-padding-lf);
     text-align: center;
     transition: all 1s ease;
@@ -68,14 +71,14 @@ body {
     top: 0;
 }
 .main .chart-select{
-    padding-bottom: var(--select-padding);
+    margin-bottom: var(--select-margin);
+    height: var(--select-height);
 }
 .main .chart-select span{
     padding-right: 5px;
     font-size: 18px;
 }
 .main .chart-select select{
-    height: var(--select-height);
     padding: 5px 10px;
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -93,7 +96,7 @@ body {
 @media (max-width: 800px) {
     .title{
         min-width: 450px;
-        /* min-height: auto; */
+        min-height: auto;
         width: var(--full-width);
         height: var(--full-height);
     }
@@ -104,7 +107,7 @@ body {
     .main{
         min-height: calc( 400px 
                     + var(--select-height) 
-                    + var(--select-padding) 
+                    + var(--select-margin) 
                     + var(--main-padding-ud) * 0.2 * 2);
         width: var(--full-width);
         height: calc(var(--screen-height) 
