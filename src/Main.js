@@ -8,7 +8,6 @@ const Main = () => {
         <>
             <div className='title'>
                 <img src={taipeilogo} alt="Logo" />
-                <br />
                 <span>109年人口戶數及性別</span>
             </div>
             <Chart />
