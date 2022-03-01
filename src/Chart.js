@@ -128,10 +128,11 @@ const Chart = () => {
     }
 
     return ( 
-        <div className='chart'>
+        <div className='main'>
         {
             district.length > 0 ?
                 (<>
+                <div className='chart-select'>
                     <span>台北市</span>
                     <select name="itemName" onChange={selectChange} >
                         {
@@ -143,10 +144,12 @@ const Chart = () => {
                             })
                         }
                     </select>
-                    <ReactEcharts
+                </div>
+                    <ReactEcharts className='chart'
+                        style={{height: "400px"}}
                         option={{
-                            legend: {},
-                            tooltip: {},
+                            legend: {},     // 圖例
+                            tooltip: {},    // 提示
                             backgroundColor: chartOption.backgroundColor,
                             xAxis: chartOption.xAxis,
                             yAxis: chartOption.yAxis,
@@ -159,7 +162,7 @@ const Chart = () => {
                     />
                 </>)
             :
-                <span>資料載入中</span>
+                <span className='wait-msg'>資料載入中</span>
         }
         </div>
     )

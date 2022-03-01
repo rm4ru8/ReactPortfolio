@@ -5,12 +5,13 @@
     --screen-height: 100vh;
     --full-width: 100%;
     --full-height: 100%;
-    --title-padding-lf: 40px;
     --title-padding-ud: 20px;
+    --title-padding-lf: 40px;
+    --title-minWidth: 160px;
+    --main-font-size: 18px;
+    --main-padding-ud: 80px;
+    --main-padding-lf: 20px;
     --img-size: 120px;
-    --chart-font-size: 18px;
-    --chart-padding-lf: 10px;
-    --chart-padding-ud: 80px;
 }
 
 * {
@@ -26,7 +27,7 @@ body {
 }
 
 .title {
-    min-width: 160px;
+    min-width: var(--title-minWidth);
     height: calc(var(--screen-height));
     padding: var(--title-padding-ud) var(--title-padding-lf);
     display: inline-block;
@@ -38,25 +39,27 @@ body {
     height: var(--img-size);
 }
 .title span{
+    width: var(--title-minWidth);
+    display: inline-block;
     font-size: 16px;
     font-weight: 400;
     color: #6a6a6a;
 }
-.chart {
+.main {
     background-color: #bdbdbd;
     min-width: 450px;
-    width: calc(var(--full-width) - 2 * var(--title-padding-lf) - var(--img-size));
+    width: calc(var(--full-width) - 2 * var(--title-padding-lf) - var(--title-minWidth));
     height: calc(var(--screen-height));
-    padding: var(--chart-padding-ud) var(--chart-padding-lf);
+    padding: var(--main-padding-ud) var(--main-padding-lf);
     display: inline-block;
     position: absolute;
     top: 0;
 }
-.chart span{
-    font-size: var(--chart-font-size);
+.main span{
+    font-size: var(--main-font-size);
 }
-.chart select{
-    font-size: var(--chart-font-size);
+.main select{
+    font-size: var(--main-font-size);
 }
 
 
@@ -70,7 +73,7 @@ body {
         width: calc(var(--img-size) + 80px);
         height: calc(var(--img-size) + 80px);
     }
-    .chart{
+    .main{
         width: var(--full-width);
         position: relative;
     }
