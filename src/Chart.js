@@ -128,38 +128,38 @@ const Chart = () => {
     return ( 
         <div className='main'>
         {
-            district.length > 0 ?
-                (<>
-                <div className='chart-select'>
-                    <span>台北市</span>
-                    <select name="itemName" onChange={selectChange} >
-                        {
-                            district.map((item,index)=>{
-                                if(index === 0){
-                                    return <option key={index} defaultValue>{item}</option>
-                                }
-                                return <option key={index}>{item}</option>
-                            })
-                        }
-                    </select>
-                </div>
-                    <ReactEcharts className='chart'
-                        style={{height: "400px"}}
-                        option={{
-                            legend: {},     // 圖例
-                            tooltip: {},    // 提示
-                            backgroundColor: chartOption.backgroundColor,
-                            xAxis: chartOption.xAxis,
-                            yAxis: chartOption.yAxis,
-                            dataset: {
-                                dimensions: chartOption.dimensions,
-                                source: chartData
-                            },
-                            series: chartOption.series
-                        }}
-                    />
-                </>)
-            :
+            // district.length > 0 ?
+            //     (<>
+            //     <div className='chart-select'>
+            //         <span>台北市</span>
+            //         <select name="itemName" onChange={selectChange} >
+            //             {
+            //                 district.map((item,index)=>{
+            //                     if(index === 0){
+            //                         return <option key={index} defaultValue>{item}</option>
+            //                     }
+            //                     return <option key={index}>{item}</option>
+            //                 })
+            //             }
+            //         </select>
+            //     </div>
+            //         <ReactEcharts className='chart'
+            //             style={{height: "400px"}}
+            //             option={{
+            //                 legend: {},     // 圖例
+            //                 tooltip: {},    // 提示
+            //                 backgroundColor: chartOption.backgroundColor,
+            //                 xAxis: chartOption.xAxis,
+            //                 yAxis: chartOption.yAxis,
+            //                 dataset: {
+            //                     dimensions: chartOption.dimensions,
+            //                     source: chartData
+            //                 },
+            //                 series: chartOption.series
+            //             }}
+            //         />
+            //     </>)
+            // :
                 <span className='wait-msg'>資料載入中</span>
         }
         </div>
