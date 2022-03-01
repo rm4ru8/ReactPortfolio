@@ -10,7 +10,7 @@ const Chart = () => {
         xAxis: { 
             type: 'category',
             axisLabel: {
-                fontWeight : 'bolder',
+                fontWeight : 400,
                 fontSize : 16
             }
         },
@@ -160,7 +160,7 @@ const Chart = () => {
                     />
                 </>)
             :
-                <span className='wait-msg'>資料載入中</span>
+                <div className='wait-msg' />
         }
         </div>
     )
