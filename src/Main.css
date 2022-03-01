@@ -9,12 +9,12 @@
     --title-padding-ud: 20px;
     --title-padding-lf: 40px;
     --title-minWidth: 160px;
-    --title-fontSize: 16px;
+    --title-fontSize: 20px;
     --main-padding-ud: 80px;
     --main-padding-lf: 20px;
     --img-size: 120px;
     --select-height: 34px;
-    --select-margin: 10px;
+    --select-margin: 50px;
 }
 
 * {
@@ -46,24 +46,24 @@ body {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1f3e23;
 }
 .title img{
     width: var(--img-size);
     height: var(--img-size);
 }
 .title span{
-    width: var(--title-minWidth);
     line-height: var(--title-fontSize);
     font-size: var(--title-fontSize);
     font-weight: 400;
-    color: #6a6a6a;
+    color: #2e2e2e;
 }
 .main {
-    background-color: #dedede;
+    background-color: #f5f5f5;
     min-width: 450px;
     min-height: calc(var(--screen-height));
-    width: calc(var(--full-width) - 2 * var(--title-padding-lf) - var(--title-minWidth));
+    width: calc( var(--full-width) 
+            - var(--title-padding-lf) * 2
+            - var(--title-minWidth));
     height: auto;
     padding: var(--main-padding-ud) var(--main-padding-lf);
     display: inline-block;
@@ -101,8 +101,8 @@ body {
         height: var(--full-height);
     }
     .title img{
-        width: calc(var(--img-size) + 80px);
-        height: calc(var(--img-size) + 80px);
+        width: var(--img-size);
+        height: var(--img-size);
     }
     .main{
         min-height: calc( 400px 
@@ -110,13 +110,17 @@ body {
                     + var(--select-margin) 
                     + var(--main-padding-ud) * 0.2 * 2);
         width: var(--full-width);
-        height: calc(var(--screen-height) 
-                    - var(--img-size) - 80px
+        height: calc(var(--screen-height)
+                    - var(--img-size)
                     - var(--title-fontSize)
                     - var(--title-padding-ud) * 2);
         padding-top: calc(var(--main-padding-ud) * 0.2);
         padding-bottom: calc(var(--main-padding-ud) * 0.2);
         position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     .main .chart-select{
         text-align: center;

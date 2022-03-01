@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ReactEcharts from "echarts-for-react";
-import './Chart.css';
-
 
 const Chart = () => {
     const [govData,setGovData] = useState([])
@@ -98,7 +96,7 @@ const Chart = () => {
                 male: arr[0],
                 female: arr[1],
             },{
-                fieldName: '單獨生活戶',
+                fieldName: '獨立生活戶',
                 male: arr[2],
                 female: arr[3],
             }
