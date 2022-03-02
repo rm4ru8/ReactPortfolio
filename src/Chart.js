@@ -58,7 +58,7 @@ const Chart = () => {
     })
 
     const fetchData = async () => {
-        const res = await fetch("v1/rest/datastore/301000000A-000082-045")
+        const res = await fetch("https://od.moi.gov.tw/api/v1/rest/datastore/301000000A-000082-045")
         const data = await res.json()
         let records = data.result.records
         let govData = []      // 台北市各區人數
